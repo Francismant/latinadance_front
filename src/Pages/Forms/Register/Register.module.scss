@@ -1,0 +1,98 @@
+@use "../../../assets/styles/mixin" as mixin;
+
+.top {
+  min-height: 82vh;
+  @include mixin.xs {
+    margin-top: 50px;
+  }
+}
+.feedback {
+  color: var(--error);
+  font-size: 18px;
+  font-weight: 600;
+  @include mixin.xs {
+    font-size: 10px;
+  }
+}
+
+.feedbackGood {
+  color: green;
+  font-size: 18px;
+  font-weight: 600;
+  @include mixin.xs {
+    font-size: 10px;
+  }
+}
+
+input {
+  font-size: 1.1rem;
+  width: 500px;
+  height: 1.8rem;
+  border-radius: 10px;
+  padding: 1%;
+  border: solid var(--colorFooter) 2px;
+  @include mixin.xs {
+    width: 200px;
+    font-size: 1rem;
+  }
+}
+
+.backgroundTop {
+  background-image: url(../../../assets/images/RegisterTop.png);
+  background-position: center;
+  background-size: cover;
+  height: 35vh;
+  @include mixin.xs {
+    height: 20vh;
+  }
+}
+
+.button {
+  padding: 2% 5%;
+  &:hover {
+    color:var(--colorFooter);
+    background-color: var(--colorBox);
+  }
+}
+.buttonAdmin {
+  padding: 0.5% 1%;
+  &:hover {
+    color:var(--colorFooter);
+    background-color: var(--colorBox);
+  }
+}
+.buttonChangePassword {
+  padding: 0.5% 1.6%;
+}
+
+.checkbox {
+  @include mixin.xs {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.labelCheckbox{
+  width: 70%;
+  text-align: center;
+  @include mixin.xs {
+    width: 100%;
+  }
+}
+
+.inputCheckbox{
+  width: 30%;
+  @include mixin.xs {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.buttonDelete {
+  display: block;
+  margin: 0 auto;
+}
+
+.forgotPassword {
+  text-decoration: underline;
+}

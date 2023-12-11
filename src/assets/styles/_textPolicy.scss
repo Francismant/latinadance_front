@@ -1,0 +1,87 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.fsize08{
+    font-size: 0.8rem;
+    @include mixin.xs {
+        font-size: 0.5rem;
+    }
+}
+.fsize1 {
+    font-size: 1rem;
+}
+.fsize1_25 {
+    font-size: 1.25rem;
+    @include mixin.xs {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
+.fsize1_5 {
+    font-size: 1.5rem;
+    @include mixin.xs {
+        font-size: 1rem;
+    }
+}
+.fsize2 {
+    font-size: 2rem;
+    @include mixin.xs {
+        font-size: 1.3rem;
+    }
+}
+.fsize2_5{
+    font-size: 2.5rem;
+}
+.fsize3 {
+    font-size: 3rem;
+}
+.fsize4 {
+    font-size: 4rem;
+}
+.fsize5 {
+    font-size: 5rem;
+}
+
+
+.fweight1 {
+    font-weight: 100;
+}
+.fweight2 {
+    font-weight: 200;
+}
+.fweight3 {
+    font-weight: 300;
+}
+.fweight4 {
+    font-weight: 400;
+}
+.fweight5 {
+    font-weight: 500;
+}
+.fweight6 {
+    font-weight: 600;
+}
+.fweight7 {
+    font-weight: 700;
+}
+.fweight8 {
+    font-weight: 800;
+}
+.fweight9 {
+    font-weight: 900;
+}
+
+.ffamily2 {
+    font-family: var(--font-family2);
+    color: var(--colorDom);
+}
+
+.ffamily3 {
+    font-family: var(--font-family2);
+}
+
+.space {
+    letter-spacing: 0.07rem;
+    @include mixin.xs {
+        letter-spacing: 0.01rem;
+    }
+}

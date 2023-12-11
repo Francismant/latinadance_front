@@ -1,0 +1,22 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.footerLogo {
+    font-size: 1rem;
+    @include mixin.xs {
+        line-height: 19px;
+        padding-top: 3px;
+    }
+}
+
+.icons {
+    padding: 0.3%;
+    display: flex;
+    gap: 1rem;
+}
+
+.footerend {
+    align-items: center;
+    @include mixin.xs {
+        padding-bottom: 0.2rem;
+    }
+}

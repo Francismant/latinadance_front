@@ -1,0 +1,73 @@
+@use "../../../assets/styles/mixin" as mixin;
+
+.eventContainer {
+  position: relative;
+  border-radius: 20px;
+  height: 650px;
+  width: 75%;
+  border: solid var(--colorDom) 2px;
+  > i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    z-index: 1;
+    color: var(--colorFooter);
+
+    &:hover {
+      color: black;
+    }
+  }
+  @include mixin.xs {
+    height: 470px;
+    width: 90%;
+  }
+
+  .imgContainer {
+    overflow: hidden;
+    padding: 3rem 1rem 0 1rem;
+    width: 600px;
+    height: 500px;
+    margin: 0 auto;
+    img {
+      margin: 0 auto;
+      width: 100%;
+    }
+    @include mixin.menuBurger {
+      width: 250px;
+      height: 250px;
+    //   padding: 2rem 1rem 0 1rem;
+    }
+  }
+
+  .title {
+    font-size: 18px;
+    margin-top: 3%;
+    @include mixin.xs {
+      font-size: 12px;
+      margin-top: 10%;
+    }
+  }
+
+  img {
+    border-radius: 20px;
+  }
+}
+
+.form {
+  width: 100%;
+  max-width: 600px;
+}
+
+.inputImg {
+  height: 70px;
+}
+
+.feedbackGood {
+  color: green;
+  font-size: 18px;
+  font-weight: 600;
+  @include mixin.xs {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,37 @@
+@use"../../../assets/styles/mixin" as mixin;
+
+.planningSize {
+    width: 400px;
+    @include mixin.xs {
+        width: 200px;
+        height: 100%;
+    }
+}
+.day {
+    // background-color: var(--colorDom);
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    border: solid var(--text-color) 0.2px;
+    @include mixin.xs {
+        font-size: 1rem;
+    }
+}
+
+.salle {
+    background-color: var(--colorFooter);
+    color: var(--colorBox);
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    border: solid var(--text-color) 0.2px;
+    @include mixin.xs {
+        font-size: 1rem;
+    }
+}
+.border {
+    border: solid var(--text-color) 0.2px;
+    width: 100%;
+}
+

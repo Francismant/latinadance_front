@@ -1,0 +1,74 @@
+@use "../../assets/styles/mixin" as mixin;
+
+.backgroundTop {
+  background-image: url(../../assets/images/backgroundTopHome.png);
+  background-position: center;
+  background-size: cover;
+  height: 35vh;
+
+  @include mixin.xs {
+    height: 20vh;
+  }
+}
+
+// .carouselTop {
+//   @include mixin.lg {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     gap: 1rem;
+//   }
+// }
+// .carouselTop {
+//   @include mixin.xs {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// }
+
+.topHome {
+  @include mixin.xs {
+    margin-top: 50px;
+  }
+}
+
+.headerTitle {
+  margin-left: 20px;
+  padding-top: 3%;
+
+  @include mixin.lg {
+    padding-top: 10%;
+    margin-left: 20%;
+  }
+}
+
+.warning {
+  background-color: #f0f0f0;
+  height: auto;
+  word-wrap: break-word;
+
+  .feedbackWarning {
+    color: var(--colorDom);
+    font-size: 25px;
+    font-weight: 600;
+    animation: warning-animate 4s infinite alternate;
+
+    @include mixin.xs {
+      font-size: 18px;
+    }
+  }
+}
+
+@keyframes warning-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}

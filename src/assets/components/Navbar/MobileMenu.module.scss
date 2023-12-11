@@ -1,0 +1,23 @@
+@use"../../../assets/styles/mixin" as mixin;
+
+.menuContainer {
+    display: none;
+    @include mixin.menuBurger {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 150px;
+        z-index: 100;
+        border: solid 2px var(--colorFooter);
+        li {
+            padding: 10px 9px;
+            cursor: pointer;
+            // border-radius: 10px;
+            // transition: background-color 0.3s;
+            // &:hover {
+            //     background-color: var(--colorFooter);
+            // }
+        }
+    }
+}

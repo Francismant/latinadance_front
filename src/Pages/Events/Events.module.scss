@@ -1,0 +1,95 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.backgroundTopEvents {
+    background-image: url(../../assets/images/backgroundTopEvenement.png);
+    background-position: center;
+    background-size: cover;
+    height: 35vh;
+
+    @include mixin.xs {
+        height: 20vh;
+    }
+}
+
+.topEvents {
+    @include mixin.xs {
+        margin-top: 50px;
+    }
+}
+
+.headerTitle {
+    padding-top: 3%;
+    margin-left: 20px;
+
+    @include mixin.lg {
+        padding-top: 8%;
+        margin-left: 72%;
+    }
+
+    @include mixin.xs {
+        padding-top: 2%;
+        margin-left: 50%;
+    }
+}
+
+.contentCard {
+    max-width: 1130px;
+    width: 100%;
+}
+
+.details {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.inputImg {
+    height: 100px;
+}
+
+.inputContainer {
+    input {
+        width: 100%;
+        display: block;
+    }
+}
+
+p.vote {
+    text-align: center;
+    margin: 3% 0;
+
+    @include mixin.menuBurger {
+        font-size: 0.8rem;
+        text-align: center;
+        margin-top: 3%;
+    }
+}
+
+.warning {
+    background-color: #f0f0f0;
+    height: auto;
+    word-wrap: break-word;
+
+    .feedbackWarning {
+        color: var(--colorDom);
+        font-size: 25px;
+        font-weight: 600;
+        animation: warning-animate 4s infinite alternate;
+
+        @include mixin.xs {
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes warning-animate {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}

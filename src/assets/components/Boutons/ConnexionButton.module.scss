@@ -1,0 +1,11 @@
+@use"../../../assets/styles/mixin" as mixin;
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixin.xs {
+        display: none;
+    }
+}

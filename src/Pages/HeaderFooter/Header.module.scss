@@ -1,0 +1,133 @@
+@use"../../assets/styles/mixin" as mixin;
+
+header {
+    background-color: var(--colorHeader);
+    padding: 0 1%;
+    @include mixin.xs {
+        position: fixed;
+        top: 0;
+        left: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        width: 100%;
+    }
+}
+
+.headerResponsive {
+    display: flex;
+    justify-content: center;
+    gap: 19%;
+    @include mixin.xl {
+        justify-content: space-between;
+        gap: 2%;
+    }
+
+    @include mixin.xs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+.sizeHeaderLeft {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.latina {
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 2rem;
+    line-height: 92%;
+    padding: 8% 0;
+
+    // color: var(--colorDom);
+    @include mixin.xs {
+        font-size: 1rem;
+        padding: 8% 0 8% 50%;
+    }
+}
+
+.latina:hover {
+    filter: blur(0.3px);
+
+    p {
+        color: var(--colorFooter);
+
+        &:nth-child(3) {
+            color: black;
+        }
+    }
+}
+
+// .latina:hover {
+//     color: #fff;
+//     box-shadow: inset 200px 0 0 0 #fc466485;
+// }
+
+.logo {
+    width: 100px;
+    height: 100px;
+
+    @include mixin.xs {
+        display: none;
+    }
+}
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mixin.menuBurger {
+        display: none;
+    }
+}
+
+.topHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+
+    @include mixin.menuBurger {
+        display: none;
+    }
+
+    .icons {
+        padding: 0.3%;
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.mobileNavbar {
+    display: none;
+    @include mixin.menuBurger {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        margin-right: 10px;
+    }
+}
+
+.menuContainer {
+    display: none;
+    @include mixin.menuBurger {
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: 0px;
+        width: 150px;
+        z-index: 100;
+        border: solid 2px var(--colorDom);
+        button {
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+    }
+}

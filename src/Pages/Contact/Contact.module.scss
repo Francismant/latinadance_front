@@ -1,0 +1,87 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.backgroundTopContact {
+    background-image: url(../../assets/images/backgroundTopContact.png);
+    background-position: center;
+    background-size: cover;
+    height: 35vh;
+
+    @include mixin.xs {
+        height: 20vh;
+
+        h1 {
+            padding-top: 24%;
+        }
+    }
+}
+
+.topContact {
+    @include mixin.xs {
+        margin-top: 50px;
+    }
+}
+
+.contactContainer {
+    margin: 4% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include mixin.xs {
+        margin: 6% 0;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        font-weight: 400;
+
+        @include mixin.xs {
+            font-size: 1.5rem;
+        }
+    }
+
+    .contactData {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        @include mixin.xs {
+            gap: 1rem;
+        }
+    }
+}
+
+.warning {
+    background-color: #f0f0f0;
+    height: auto;
+    word-wrap: break-word;
+
+    .feedbackWarning {
+        color: var(--colorDom);
+        font-size: 25px;
+        font-weight: 600;
+        animation: warning-animate 4s infinite alternate;
+
+        @include mixin.xs {
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes warning-animate {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+// .faq {
+//     summary, p {
+//         align-items: center;
+//     }
+// }

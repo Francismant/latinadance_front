@@ -1,0 +1,125 @@
+@use"../../assets/styles/mixin" as mixin;
+
+.backgroundTopInfos {
+    background-image: url(../../assets/images/backgroundTopInfo.png);
+    background-position: center;
+    background-size: cover;
+    height: 35vh;
+
+    @include mixin.xs {
+        height: 20vh;
+    }
+}
+
+.topInfos {
+    @include mixin.xs {
+        margin-top: 50px;
+    }
+}
+
+.containerSalle {
+    position: relative;
+    font-family: sans-serif;
+}
+
+.containerSalle::before,
+.containerSalle::after {
+    content: "";
+    background-color: #fa82704c;
+    position: absolute;
+}
+
+.containerSalle::before {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 30%;
+    right: 7%;
+}
+
+.containerSalle::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    top: 8%;
+    right: 5%;
+    border: 1px solid;
+}
+
+.containerSalle .boxSalle {
+    width: 450px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: .7rem;
+    transition: all ease .3s;
+}
+
+.containerSalle .boxSalle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.containerSalle .boxSalle:hover {
+    box-shadow: 0px 0px 20px 1px #f7301e8f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.noteCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+
+    @include mixin.xs {
+        font-size: 0.5rem;
+        text-align: center;
+    }
+}
+
+.warning {
+    background-color: #f0f0f0;
+    height: auto;
+    word-wrap: break-word;
+
+    .feedbackWarning {
+        color: var(--colorDom);
+        font-size: 25px;
+        font-weight: 600;
+        animation: warning-animate 4s infinite alternate;
+
+        @include mixin.xs {
+            font-size: 18px;
+        }
+    }
+}
+
+@keyframes warning-animate {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.forgotPassword {
+    text-decoration: underline;
+}
+
+// .profCards {
+//     @include mixin.xs {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 0;
+//     }
+// }
