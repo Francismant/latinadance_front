@@ -1,27 +1,26 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import styles from "./Events.module.scss";
 import Loading from "../../assets/components/Loading/Loading";
 import { useFetchData } from '../../hooks/useFetchData';
 import Event from './components/Event';
 import { useContext } from "react";
 import { AuthContext } from "../../context";
-// import AddNewEvent from "./components/AddNewEvent";
-import { getInfosCours } from "../../apis/infos";
+// import { getInfosCours } from "../../apis/infos";
 
 
 
 function Events() {
     const { user } = useContext(AuthContext);
-    const [infos, setInfos] = useState([]);
+    // const [infos, setInfos] = useState([]);
 
-    useEffect(() => {
-        async function fetchData() {
-            const infosData = await getInfosCours();
-            setInfos(infosData);
-        }
+    // useEffect(() => {
+    //     async function fetchData() {
+    //         const infosData = await getInfosCours();
+    //         setInfos(infosData);
+    //     }
 
-        fetchData();
-    }, []);
+    //     fetchData();
+    // }, []);
 
     const [[events, setEvents], isLoading] = useFetchData(
         "http://localhost:8000", "api/events/getEvents"
@@ -40,9 +39,9 @@ function Events() {
                 <>
                 </>
             } */}
-            {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
+            {/* {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
             </div>
-            }
+            } */}
             <div className="flex-fill df fc container p20">
                 <h2 className="mb3pc">Retrouvez ici les évènements ponctuels proposés par notre école </h2>
                 {isLoading ? (

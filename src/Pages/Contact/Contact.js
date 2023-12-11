@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import React from 'react';
 import styles from "./Contact.module.scss";
 import contact from "../../assets/images/Contact.png";
@@ -8,16 +8,16 @@ import { getInfosCours } from "../../apis/infos";
 
 
 function Contact() {
-    const [infos, setInfos] = useState([]);
+    // const [infos, setInfos] = useState([]);
   
-  useEffect(() => {
-    async function fetchData() {
-      const infosData = await getInfosCours();
-      setInfos(infosData);
-    }
+//   useEffect(() => {
+//     async function fetchData() {
+//       const infosData = await getInfosCours();
+//       setInfos(infosData);
+//     }
 
-    fetchData();
-  }, []);
+//     fetchData();
+//   }, []);
 
     return (
         <>
@@ -27,9 +27,9 @@ function Contact() {
                     {/* <ButtonList buttonLabels={buttonLabelsInfos} /> */}
                 </div>
             </section>
-            {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
+            {/* {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
             </div>
-            }
+            } */}
             <main className='center'>
                 <section className={styles.contactContainer}>
                     <div className={styles.contactData}>

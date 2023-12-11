@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import styles from "./Infos.module.scss";
 // import ButtonList from "../assets/components/ButtonList";
 import { buttonLabelsInfos, tarifsCouple, tarifsSolo } from "../../data/Data";
@@ -14,21 +14,21 @@ import CarteTarifCouple from "../../assets/components/Cards/CarteTarifCouple";
 import CarteTarifSolo from "../../assets/components/Cards/CarteTarifSolo";
 // import { useContext } from "react";
 // import { AuthContext } from "../../context";
-import { getInfosCours } from "../../apis/infos";
+// import { getInfosCours } from "../../apis/infos";
 import { NavLink } from "react-router-dom";
 
 
 function Infos() {
-  const [infos, setInfos] = useState([]);
+  // const [infos, setInfos] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const infosData = await getInfosCours();
-      setInfos(infosData);
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const infosData = await getInfosCours();
+  //     setInfos(infosData);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <>
@@ -38,9 +38,9 @@ function Infos() {
           {/* <ButtonList buttonLabels={buttonLabelsInfos} /> */}
         </div>
       </section>
-      {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
+      {/* {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
       </div>
-      }
+      } */}
         <h2 className="mb3pc">Les professeurs</h2>
       <main className="center df fc gap2">
         <section className="df gap1 fw">
