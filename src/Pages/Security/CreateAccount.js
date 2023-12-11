@@ -39,7 +39,7 @@ function CreateAccount() {
         try {
             clearErrors();
             const response = await fetch(
-                `http://localhost:8000/api/users/createAccount/${values.email}`
+                `https://latinadanceback-production.up.railway.app/api/users/createAccount/${values.email}`
             );
             if (!response.ok) {
                 throw new Error("Email inexistant");

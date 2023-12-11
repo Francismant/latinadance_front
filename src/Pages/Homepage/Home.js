@@ -11,7 +11,7 @@ import CarouselParticulier from "../../assets/components/Carousels/CarouselParti
 import { salsaData, bachataData, kizombaData } from "../../data/Data";
 import StylesDance from "../../assets/components/StylesDance";
 // import CookieConsent from "react-cookie-consent";
-import { getInfosCours } from "../../apis/infos";
+// import { getInfosCours } from "../../apis/infos";
 
 function Home() {
   // const { infos } = useContext(AuthContext);
