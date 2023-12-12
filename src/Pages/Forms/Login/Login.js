@@ -98,53 +98,64 @@ function Login() {
         navigate("/profile");
       }, 3000);
     } catch (error) {
-      setError("generic", { type: "generic", message: "Email ou mot de passe incorrect" });
-    }
-    finally {
+      setError("generic", {
+        type: "generic",
+        message: "Email ou mot de passe incorrect",
+      });
+    } finally {
       setIsSubmitted(false);
     }
   }
 
   return (
-    <section className={styles.top}>
-      <div className={styles.backgroundTop}></div>
-      <div className="flex-fill df fc jcc aic mb3pc">
-        <h2 className="mt3pc">Connexion</h2>
-        <form className="df fc jcc aic" onSubmit={handleSubmit(submit)}>
-          <div className="df fc mb10">
-            <label htmlFor="email" className="mb10">
-              Email
-            </label>
-            <input type="email" id="email" {...register("email")} />
-            {errors?.email && (
-              <p className={`${styles.feedback}`}>{errors.email.message}</p>
+    <main className="sizePage">
+      <section className={styles.top}>
+        <div className={styles.backgroundTop}></div>
+        <div className="flex-fill df fc jcc aic mb3pc">
+          <h2 className="mt3pc">Connexion</h2>
+          <form className="df fc jcc aic" onSubmit={handleSubmit(submit)}>
+            <div className="df fc mb10">
+              <label htmlFor="email" className="mb10">
+                Email
+              </label>
+              <input type="email" id="email" {...register("email")} />
+              {errors?.email && (
+                <p className={`${styles.feedback}`}>{errors.email.message}</p>
+              )}
+            </div>
+            <div className="df fc mb10">
+              <label htmlFor="password" className="mb10">
+                Password
+              </label>
+              <input type="password" id="password" {...register("password")} />
+              {errors?.password && (
+                <p className={`${styles.feedback}`}>
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+            {feedback && (
+              <p className={`${styles.feedback} mb20`}>{feedback}</p>
             )}
-          </div>
-          <div className="df fc mb10">
-            <label htmlFor="password" className="mb10">
-              Password
-            </label>
-            <input type="password" id="password" {...register("password")} />
-            {errors?.password && (
-              <p className={`${styles.feedback}`}>{errors.password.message}</p>
+            {feedbackGood && (
+              <p className={`${styles.feedbackGood} mb20`}>{feedbackGood}</p>
             )}
-          </div>
-          {feedback && <p className={`${styles.feedback} mb20`}>{feedback}</p>}
-          {feedbackGood && (
-            <p className={`${styles.feedbackGood} mb20`}>{feedbackGood}</p>
-          )}
-          {errors?.generic && (
-            <p className={`${styles.feedback}`}>{errors.generic.message}</p>
-          )}
-          <div className={`df fc mb10 ${styles.forgotPassword}`}>
-            <Link to="/forgotPassword">Mot de passe oublié ?</Link>
-          </div>
-          <button className={`btn btn-primary mt3pc mb3pc ${styles.button}`} disabled={isSubmitted}>
-            Se connecter
-          </button>
-        </form>
-      </div>
-    </section>
+            {errors?.generic && (
+              <p className={`${styles.feedback}`}>{errors.generic.message}</p>
+            )}
+            <div className={`df fc mb10 ${styles.forgotPassword}`}>
+              <Link to="/forgotPassword">Mot de passe oublié ?</Link>
+            </div>
+            <button
+              className={`btn btn-primary mt3pc mb3pc ${styles.button}`}
+              disabled={isSubmitted}
+            >
+              Se connecter
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
   );
 }
 
