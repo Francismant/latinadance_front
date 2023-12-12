@@ -3,7 +3,7 @@
 .planningSize {
     width: 400px;
     @include mixin.xs {
-        width: 200px;
+        width: 250px;
         height: 100%;
     }
 }
