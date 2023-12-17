@@ -12,11 +12,21 @@
     padding: 0.3%;
     display: flex;
     gap: 1rem;
+    @include mixin.xs {
+        flex-direction: column;
+    }
 }
 
 .footerend {
     align-items: center;
     @include mixin.xs {
         padding-bottom: 0.2rem;
+    }
+}
+
+.footerContainer {
+    color: var(--colorFooter);
+    @include mixin.xs {
+        display: flex;
     }
 }
