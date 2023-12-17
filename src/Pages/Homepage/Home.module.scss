@@ -11,28 +11,9 @@
   }
 }
 
-// .carouselTop {
-//   @include mixin.lg {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: center;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     gap: 1rem;
-//   }
-// }
-// .carouselTop {
-//   @include mixin.xs {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// }
-
 .topHome {
   @include mixin.xs {
-    margin-top: 50px;
+    margin-top: 4rem;
   }
 }
 

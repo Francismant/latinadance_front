@@ -3,7 +3,7 @@
 .top {
   min-height: 82vh;
   @include mixin.xs {
-    margin-top: 50px;
+    margin-top: 4rem;
   }
 }
 .feedback {

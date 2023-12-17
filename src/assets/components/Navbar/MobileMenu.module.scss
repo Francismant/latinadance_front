@@ -5,9 +5,9 @@
     @include mixin.menuBurger {
         display: block;
         position: absolute;
-        top: 50px;
+        top: 4rem;
         right: 0;
-        width: 150px;
+        width: 170px;
         z-index: 100;
         border: solid 2px var(--colorFooter);
         li {
