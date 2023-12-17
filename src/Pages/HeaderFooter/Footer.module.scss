@@ -9,12 +9,19 @@
 }
 
 .icons {
-    padding: 0.3%;
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-bottom: 10px;
+    @include mixin.xs {
+        gap: 4rem;
+        margin-bottom: 2px;
+    }
 }
 
 .footerend {
+    padding-bottom: 0.5rem;
     align-items: center;
     @include mixin.xs {
         padding-bottom: 0.2rem;
