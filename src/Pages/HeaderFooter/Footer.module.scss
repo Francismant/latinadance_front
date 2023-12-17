@@ -12,9 +12,6 @@
     padding: 0.3%;
     display: flex;
     gap: 1rem;
-    @include mixin.xs {
-        flex-direction: column;
-    }
 }
 
 .footerend {
