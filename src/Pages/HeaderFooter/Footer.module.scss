@@ -23,12 +23,3 @@
         padding-bottom: 0.2rem;
     }
 }
-
-.footerContainer {
-    color: var(--colorFooter);
-    @include mixin.xs {
-        justify-content: space-evenly;
-        display: flex;
-        color: var(--colorFooter);
-    }
-}

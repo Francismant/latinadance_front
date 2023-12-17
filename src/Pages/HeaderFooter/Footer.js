@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className={styles.footerContainer}>
+    <footer className="colorFooter">
       <div className={`df fc jcc aic fsize2 ${styles.footerLogo}`}>
         <p>LILLE</p>
         <p>LATINA</p>
         <p className="ffamily3">Dance</p>
       </div>
       <div className={`df jcc fsize08 ${styles.footerend}`}>
-        <div>
-          <p>Copyright©2023 |Tous droits réservés -</p>
-          <span>
-            <Link to="/mentions">Mentions légales</Link>
-          </span>
-        </div>
+        <p>Copyright©2023 |Tous droits réservés -</p>
+        <span>
+          <Link to="/mentions">Mentions légales</Link>
+        </span>
         <div className={styles.icons}>
           <a href="">
             <img className="ml20" src={fb} alt="logo de facebook" />
