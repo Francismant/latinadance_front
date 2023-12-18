@@ -9,19 +9,19 @@ import CarouselParticulier from "../../assets/components/Carousels/CarouselParti
 import { salsaData, bachataData, kizombaData } from "../../data/Data";
 import StylesDance from "../../assets/components/StylesDance";
 // import CookieConsent from "react-cookie-consent";
-import { getInfosCours } from "../../apis/infos";
+// import { getInfosCours } from "../../apis/infos";
 
 function Home() {
-  const [infos, setInfos] = useState([]);
+  // const [infos, setInfos] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const infosData = await getInfosCours();
-      setInfos(infosData);
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const infosData = await getInfosCours();
+  //     setInfos(infosData);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <>
@@ -31,12 +31,12 @@ function Home() {
           <h1 className={styles.headerTitle}>COURS DE SALSA BACHATA KIZOMBA</h1>
         </div>
       </section>
-      {infos.length > 0 && (
+      {/* {infos.length > 0 && (
         <div className="warning">
           {" "}
           <h3 className="feedbackWarning center tac mb3pc">{infos[0].text}</h3>
         </div>
-      )}
+      )} */}
       <main className="center df fc gap5">
         <section>
           <h2 className="mb3pc">Les Soirées SBK</h2>

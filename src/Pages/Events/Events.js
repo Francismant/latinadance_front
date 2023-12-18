@@ -5,20 +5,20 @@ import { useFetchData } from "../../hooks/useFetchData";
 import Event from "./components/Event";
 import { useContext } from "react";
 import { AuthContext } from "../../context";
-import { getInfosCours } from "../../apis/infos";
+// import { getInfosCours } from "../../apis/infos";
 
 function Events() {
   const { user } = useContext(AuthContext);
-  const [infos, setInfos] = useState([]);
+  // const [infos, setInfos] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const infosData = await getInfosCours();
-      setInfos(infosData);
-    }
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const infosData = await getInfosCours();
+  //     setInfos(infosData);
+  //   }
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const [[events, setEvents], isLoading] = useFetchData(
     "http://localhost:8000",
@@ -34,12 +34,12 @@ function Events() {
       <div className={`df fc jcsb ${styles.backgroundTopEvents}`}>
         <h1 className={styles.headerTitle}>EVENEMENTS</h1>
       </div>
-      {infos.length > 0 && (
+      {/* {infos.length > 0 && (
         <div className="warning">
           {" "}
           <h3 className="feedbackWarning center tac mb3pc">{infos[0].text}</h3>
         </div>
-      )}
+      )} */}
       <div className="flex-fill df fc container p20">
         <h2 className="mb3pc">
           Retrouvez ici les évènements ponctuels proposés par notre école{" "}
