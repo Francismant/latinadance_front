@@ -16,6 +16,7 @@ import CarteTarifSolo from "../../assets/components/Cards/CarteTarifSolo";
 // import { AuthContext } from "../../context";
 // import { getInfosCours } from "../../apis/infos";
 import { NavLink } from "react-router-dom";
+import MapComponent from "../../assets/components/MapComponent";
 
 function Infos() {
   // const [infos, setInfos] = useState([]);
@@ -63,6 +64,7 @@ function Infos() {
           </p>
           <div className="df fc gap2">
             <Salles />
+            <MapComponent />
           </div>
         </section>
         <section className="mb3pc">
