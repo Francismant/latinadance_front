@@ -4,27 +4,24 @@ import styles from "./Home.module.scss";
 import {
   tableauImageCarousel,
   tableauImageCarouselParticulier,
-  buttonLabelsHome,
 } from "../../data/Data";
 import CarouselParticulier from "../../assets/components/Carousels/CarouselParticulier";
-// import ButtonList from "../assets/components/ButtonList";
 import { salsaData, bachataData, kizombaData } from "../../data/Data";
 import StylesDance from "../../assets/components/StylesDance";
 // import CookieConsent from "react-cookie-consent";
-// import { getInfosCours } from "../../apis/infos";
+import { getInfosCours } from "../../apis/infos";
 
 function Home() {
-  // const { infos } = useContext(AuthContext);
-  // const [infos, setInfos] = useState([]);
-  
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const infosData = await getInfosCours();
-  //     setInfos(infosData);
-  //   }
+  const [infos, setInfos] = useState([]);
 
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    async function fetchData() {
+      const infosData = await getInfosCours();
+      setInfos(infosData);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -32,14 +29,15 @@ function Home() {
       <section className={styles.topHome}>
         <div className={`df fc jcsb ${styles.backgroundTop}`}>
           <h1 className={styles.headerTitle}>COURS DE SALSA BACHATA KIZOMBA</h1>
-          {/* <ButtonList buttonLabels={buttonLabelsHome} /> */}
         </div>
       </section>
-      {/* {infos.length > 0 && <div className={styles.warning}> <h3 className={`${styles.feedbackWarning} center tac mb3pc`}>{infos[0].text}</h3>
-      </div>
-      } */}
+      {infos.length > 0 && (
+        <div className="warning">
+          {" "}
+          <h3 className="feedbackWarning center tac mb3pc">{infos[0].text}</h3>
+        </div>
+      )}
       <main className="center df fc gap5">
-
         <section>
           <h2 className="mb3pc">Les Soirées SBK</h2>
           <div className={`df jcc aic fw gap2`}>

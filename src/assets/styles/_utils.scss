@@ -177,6 +177,10 @@
   .mb3pc {
     margin-bottom: 3%;
   }
+
+  .mb4pc {
+    margin-bottom: 4%;
+  }
   
 
   .mt5 {
@@ -215,6 +219,10 @@
     width: 100%;
   }
 
+  .gap05 {
+    gap: 0.5rem;
+  }
+  
   .gap1 {
     gap: 1rem;
   }
@@ -273,4 +281,9 @@
 
 .cp {
   cursor: pointer;
+}
+
+.m0auto {
+  display: block;
+  margin: 0 auto;
 }

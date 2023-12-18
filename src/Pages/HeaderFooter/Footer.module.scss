@@ -1,7 +1,7 @@
 @use"../../assets/styles/mixin" as mixin;
 
 .footerLogo {
-    font-size: 1rem;
+    font-size: 1.1rem;
     @include mixin.xs {
         line-height: 19px;
         padding-top: 3px;

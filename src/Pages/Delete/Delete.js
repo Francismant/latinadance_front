@@ -29,10 +29,9 @@ function Delete() {
 
     return (
         <section className={styles.top}>
-            <div className={styles.backgroundTop}></div>
             <h3 className="mt3pc mb3pc tac">Vous êtes sur le point de supprimer votre compte</h3>
             {feedback && <p className={`${styles.feedback} tac`}>{feedback}</p>}
-            <button onClick={() => { handleDelete(); logout(); }} className={`btn btn-primary ${styles.buttonDelete}`}>
+            <button onClick={() => { handleDelete(); logout(); }} className="btn btn-primary m0auto">
                 Supprimer mon compte
             </button>
         </section>

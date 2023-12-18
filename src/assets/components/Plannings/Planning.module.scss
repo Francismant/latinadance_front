@@ -2,9 +2,10 @@
 
 .planningSize {
     width: 400px;
+    margin: 0 auto;
     @include mixin.xs {
         width: 250px;
-        height: 100%;
+        // height: 100%;
     }
 }
 .day {
@@ -35,3 +36,9 @@
     width: 100%;
 }
 
+.legende {
+    @include mixin.xs {
+        all:unset;
+        font-size: 0.7rem;
+    }
+}

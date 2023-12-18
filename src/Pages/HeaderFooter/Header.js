@@ -41,9 +41,6 @@ function Header() {
                 <button onClick={logout} className={`mr20 btn btn-primary`}>
                   <NavLink to="/">Déconnexion</NavLink>
                 </button>
-                {/* <button className={`btn btn-primary-reverse`}>
-                  <NavLink to="/Delete">Suppression du compte</NavLink>
-                </button> */}
               </>
             ) : (
               <>
@@ -58,39 +55,6 @@ function Header() {
             )}
           </ul>
         </div>
-        {/* <i
-          onClick={viewMenu}
-          className={`fa-solid fa-circle-user ${styles.mobileNavbar}`}
-        ></i>
-        {showButton && (
-          <>
-            <ul className={`card p10 ${styles.menuContainer}`}>
-              {user ? (
-                <>
-                  <button onClick={logout} className={`btn btn-primary`}>
-                    <NavLink to="/">Déconnexion</NavLink>
-                  </button>
-                  <button className={`btn btn-primary-reverse`}>
-                    <NavLink to="/Profile">Profil</NavLink>
-                  </button>
-                  <button className={`btn btn-primary`}>
-                    <NavLink to="/Delete">Suppression</NavLink>
-                  </button>
-                </>
-              ) : (
-                <>
-                  <button className={`mr20 btn btn-primary`}>
-                    <NavLink to="/Register">Inscription</NavLink>
-                  </button>
-                  <button className={`btn btn-primary-reverse`}>
-                    <i className="fas fa-right-to-bracket mr5"></i>
-                    <NavLink to="/Login">Connexion</NavLink>
-                  </button>
-                </>
-              )}
-            </ul>
-          </>
-        )} */}
       </div>
     </header>
   );

@@ -3,7 +3,7 @@ import styles from "./CarteTarif.module.scss"
 
 function CarteTarifCouple({ tarifsCouple }) {
   return (
-    <div className="df jcsa fw">
+    <div className="df jcsa fw gap2">
       {tarifsCouple.map((item, idx) => (
         <div className={styles.card}>
           <div key={idx} className={`df fc jcc aic gap1 fw ${styles.bg}`}>

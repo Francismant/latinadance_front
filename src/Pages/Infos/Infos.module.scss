@@ -78,48 +78,13 @@
     margin-top: 1.5rem;
 
     @include mixin.xs {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
         text-align: center;
     }
 }
 
-.warning {
-    background-color: #f0f0f0;
-    height: auto;
-    word-wrap: break-word;
-
-    .feedbackWarning {
-        color: var(--colorDom);
-        font-size: 25px;
-        font-weight: 600;
-        animation: warning-animate 4s infinite alternate;
-
-        @include mixin.xs {
-            font-size: 18px;
-        }
-    }
-}
-
-@keyframes warning-animate {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-}
 
 .forgotPassword {
     text-decoration: underline;
 }
 
-// .profCards {
-//     @include mixin.xs {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 0;
-//     }
-// }

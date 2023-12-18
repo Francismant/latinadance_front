@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 function CreateAccount() {
   const [feedback, setFeedBack] = useState("");
   const [feedbackGood, setFeedbackGood] = useState("");
+  // const [changeFeedback, setChangeFeedback] = useState("");
 
   const yupSchema = yup.object({
     email: yup
@@ -26,6 +27,7 @@ function CreateAccount() {
     register,
     handleSubmit,
     clearErrors,
+    reset,
     setError,
     formState: { errors },
   } = useForm({
@@ -39,7 +41,7 @@ function CreateAccount() {
     try {
       clearErrors();
       const response = await fetch(
-        `https://latinadanceback-production.up.railway.app/api/users/createAccount/${values.email}`
+        `http://localhost:8000/api/users/createAccount/${values.email}`
       );
       if (!response.ok) {
         throw new Error("Email inexistant");
@@ -47,28 +49,28 @@ function CreateAccount() {
       setFeedbackGood("email envoyé");
     } catch (error) {
       setError("generic", { type: "generic", message: "Email déjà Existant" });
+      // setChangeFeedback("Email déjà Existant");
+      // setTimeout(() => { setChangeFeedback(""); }, 4000);
+      // reset(defaultValues);
     }
   }
 
   return (
-    <main className="sizePage">
+    <main>
       <section className={styles.top}>
-        <div className={styles.backgroundTop}></div>
-        <div className="flex-fill df fc jcc aic center">
-          <h2 className="mt3pc">
-            Notez ci-dessous votre adresse mail afin de recevoir un lien pour
-            pouvoir créer votre compte
-          </h2>
-          <form onSubmit={handleSubmit(submit)}>
-            <div className="df fc mb20">
-              <label htmlFor="email" className="mb3pc">
-                Email
-              </label>
-              <input type="email" id="email" {...register("email")} />
-              {errors?.email && (
-                <p className={`${styles.feedback}`}>{errors.email.message}</p>
-              )}
-            </div>
+        <h2 className="mt3pc">
+          Notez ci-dessous votre adresse mail afin de recevoir un lien pour
+          pouvoir créer votre compte
+        </h2>
+        <form onSubmit={handleSubmit(submit)}>
+          <div className="df fc jcc aic mb20 gap2">
+            <label htmlFor="email">
+              Email
+            </label>
+            <input type="email" id="email" {...register("email")} />
+            {errors?.email && (
+              <p className={`${styles.feedback}`}>{errors.email.message}</p>
+            )}
             {feedback && (
               <p className={`${styles.feedback} mb20`}>{feedback}</p>
             )}
@@ -76,11 +78,18 @@ function CreateAccount() {
               <p className={`${styles.feedbackGood} mb20`}>{feedbackGood}</p>
             )}
             {errors?.generic && (
-              <p className={`${styles.feedback}`}>{errors.generic.message}</p>
+              <p className={`${styles.feedback} mb20`}>
+                {errors.generic.message}
+              </p>
             )}
+            {/* {changeFeedback && (
+              <p className={`${styles.feedback} mb20`}>
+                {changeFeedback}
+              </p>
+            )} */}
             <button className="btn btn-primary">Envoyer</button>
-          </form>
-        </div>
+          </div>
+        </form>
       </section>
     </main>
   );

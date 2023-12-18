@@ -1,4 +1,4 @@
-@use"./mixin" as mixin;
+@use "./mixin" as mixin;
 // .textFamilyHeader {
 //     font-family: var(--font-family);
 //     font-size: 2.5rem;
@@ -32,7 +32,7 @@
 // }
 
 .btn {
-  padding: 5px 15px;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
   transition: 0.2s opacity;
@@ -57,7 +57,7 @@
 
 .card {
   border-radius: 20px;
-  background-color: hsla(0, 0%, 100%, 0.90);
+  background-color: hsla(0, 0%, 100%, 0.9);
 }
 
 .form-error {
@@ -104,6 +104,33 @@
   }
 }
 
-.sizePage {
-  height: 100vh;
+.warning {
+  background-color: #f0f0f0;
+  height: auto;
+  word-wrap: break-word;
+  padding-top: 1rem;
+
+  .feedbackWarning {
+    color: var(--colorDom);
+    font-size: 25px;
+    font-weight: 600;
+    animation: warning-animate 4s infinite alternate;
+
+    @include mixin.xs {
+      font-size: 18px;
+    }
+  }
+}
+@keyframes warning-animate {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.redText {
+  color: var(--colorDom);
 }

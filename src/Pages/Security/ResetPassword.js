@@ -60,24 +60,17 @@ function ResetPassword() {
   }
 
   return (
-    <main className="sizePage">
+    <main>
       <section className={styles.top}>
-        <div className={styles.backgroundTop}></div>
         <h2 className="mt3pc">Réinitialisation du mot de passe</h2>
         <form className="df fc jcc aic" onSubmit={handleSubmit(submit)}>
-          <div className="df fc mb10">
-            <label htmlFor="password" className="mb10">
-              Password
-            </label>
+          <div className="df fc jcc aic gap2">
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" {...register("password")} />
             {errors?.password && (
               <p className={`${styles.feedback}`}>{errors.password.message}</p>
             )}
-          </div>
-          <div className="df fc mb10">
-            <label htmlFor="confirmPassword" className="mb10">
-              Confirmation Password
-            </label>
+            <label htmlFor="confirmPassword">Confirmation Password</label>
             <input
               type="password"
               id="confirmPassword"
@@ -88,19 +81,16 @@ function ResetPassword() {
                 {errors.confirmPassword.message}
               </p>
             )}
+            {feedBackGood && (
+              <p className={`${styles.feedbackGood}`}>{feedBackGood}</p>
+            )}
+            {errors?.generic && (
+              <p className={`${styles.feedback}`}>{errors.generic.message}</p>
+            )}
+            <button className="btn btn-primary" disabled={isSubmitting}>
+              Enregistrer
+            </button>
           </div>
-          {feedBackGood && (
-            <p className={`${styles.feedbackGood}`}>{feedBackGood}</p>
-          )}
-          {errors?.generic && (
-            <p className={`${styles.feedback}`}>{errors.generic.message}</p>
-          )}
-          <button
-            className={`btn btn-primary mt3pc mb3pc ${styles.buttonChangePassword}`}
-            disabled={isSubmitting}
-          >
-            Enregistrer
-          </button>
         </form>
       </section>
     </main>

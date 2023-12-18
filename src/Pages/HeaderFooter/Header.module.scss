@@ -15,20 +15,20 @@ header {
 
 .headerResponsive {
     display: flex;
-    justify-content: center;
-    gap: 19%;
+    justify-content: space-between;
     @include mixin.xl {
-        justify-content: space-between;
-        gap: 2%;
-    }
-
-    @include mixin.xs {
         height: 4rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 1rem;
     }
+
+    // @include mixin.xs {
+    //     height: 4rem;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    // }
 }
 
 .sizeHeaderLeft {
@@ -46,7 +46,7 @@ header {
     padding: 8% 0;
 
     // color: var(--colorDom);
-    @include mixin.xs {
+    @include mixin.xl {
         font-size: 1rem;
         padding: 8% 0 8% 50%;
     }
@@ -64,20 +64,6 @@ header {
     }
 }
 
-// .latina:hover {
-//     color: #fff;
-//     box-shadow: inset 200px 0 0 0 #fc466485;
-// }
-
-.logo {
-    width: 100px;
-    height: 100px;
-
-    @include mixin.xs {
-        display: none;
-    }
-}
-
 .register {
     display: flex;
     justify-content: center;
@@ -85,23 +71,6 @@ header {
 
     @include mixin.menuBurger {
         display: none;
-    }
-}
-
-.topHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2%;
-
-    @include mixin.menuBurger {
-        display: none;
-    }
-
-    .icons {
-        padding: 0.3%;
-        display: flex;
-        gap: 2rem;
     }
 }
 

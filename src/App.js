@@ -5,18 +5,15 @@ import Footer from "./Pages/HeaderFooter/Footer";
 import Header from "./Pages/HeaderFooter/Header";
 
 function App() {
-
   return (
     <>
-      {/* <body> */}
-        <AuthProvider>
-          <Header />
-          <Suspense>
-            <Outlet />
-          </Suspense>
-          <Footer />
-        </AuthProvider>
-      {/* </body> */}
+      <AuthProvider>
+        <Header />
+        <Suspense>
+          <Outlet />
+        </Suspense>
+        <Footer />
+      </AuthProvider>
     </>
   );
 }

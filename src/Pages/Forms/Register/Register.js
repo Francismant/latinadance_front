@@ -10,6 +10,7 @@ import { useState } from "react";
 function Register() {
   const navigate = useNavigate();
   const [feedBackGood, setFeedBackGood] = useState("");
+  // const [changeFeedback, setChangeFeedback] = useState("");
 
   const yupSchema = yup.object({
     name: yup
@@ -75,26 +76,26 @@ function Register() {
       }, 3000);
     } catch (error) {
       setError("generic", { type: "generic", message: "Email déja existant" });
+      // setChangeFeedback("Email déjà existant");
+      // setTimeout(() => { navigate("/"); }, 4000);
     }
   }
 
   return (
-    <main className="sizePage">
+    <main>
       <section className={styles.top}>
-        <div className={styles.backgroundTop}></div>
-        <div className="flex-fill df fc jcc aic mb3pc">
-          <h2 className="mt3pc ">Inscription</h2>
-          <form className="df fc jcc aic" onSubmit={handleSubmit(submit)}>
-            <div className="df fc mb10">
-              <label htmlFor="name" className="mb10">
-                nom
-              </label>
-              <input type="text" id="name" {...register("name")} />
-              {errors?.name && (
-                <p className={`${styles.feedback}`}>{errors.name.message}</p>
-              )}
-            </div>
-            {/* <div className="df fc mb10">
+        <h2 className="mt3pc ">Inscription</h2>
+        <form className="df fc jcc aic" onSubmit={handleSubmit(submit)}>
+          <div className="df fc mb10">
+            <label htmlFor="name" className="mb10">
+              nom
+            </label>
+            <input type="text" id="name" {...register("name")} />
+            {errors?.name && (
+              <p className={`${styles.feedback}`}>{errors.name.message}</p>
+            )}
+          </div>
+          {/* <div className="df fc mb10">
             <label htmlFor="email" className="mb10">
             Email
             </label>
@@ -103,67 +104,69 @@ function Register() {
               <p className={`${styles.feedback}`}>{errors.email.message}</p>
               )}
             </div> */}
-            <div className="df fc mb10">
-              <label htmlFor="password" className="mb10">
-                Password
-              </label>
-              <input type="password" id="password" {...register("password")} />
-              {errors?.password && (
-                <p className={`${styles.feedback}`}>
-                  {errors.password.message}
-                </p>
-              )}
-            </div>
-            <div className="df fc mb10">
-              <label htmlFor="confirmPassword" className="mb10">
-                Confirmation Password
+          <div className="df fc mb10">
+            <label htmlFor="password" className="mb10">
+              Password
+            </label>
+            <input type="password" id="password" {...register("password")} />
+            {errors?.password && (
+              <p className={`${styles.feedback}`}>{errors.password.message}</p>
+            )}
+          </div>
+          <div className="df fc mb10">
+            <label htmlFor="confirmPassword" className="mb10">
+              Confirmation Password
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              {...register("confirmPassword")}
+            />
+            {errors?.confirmPassword && (
+              <p className={`${styles.feedback}`}>
+                {errors.confirmPassword.message}
+              </p>
+            )}
+          </div>
+          <div>
+            <div className={`df aic mt20 ${styles.checkbox}`}>
+              <label className={styles.labelCheckbox} htmlFor="acceptedTerms">
+                Accepter les{" "}
+                <Link to="/Conditions" target="_blank">
+                  <span className="fweight6">conditions générales</span>
+                </Link>
               </label>
               <input
-                type="password"
-                id="confirmPassword"
-                {...register("confirmPassword")}
+                className={styles.inputCheckbox}
+                type="checkbox"
+                id="acceptedTerms"
+                {...register("acceptedTerms")}
               />
-              {errors?.confirmPassword && (
-                <p className={`${styles.feedback}`}>
-                  {errors.confirmPassword.message}
-                </p>
-              )}
             </div>
-            <div>
-              <div className={`df aic mt20 ${styles.checkbox}`}>
-                <label className={styles.labelCheckbox} htmlFor="acceptedTerms">
-                  Accepter les{" "}
-                  <Link to="/Conditions" target="_blank">
-                    <span className="fweight6">conditions générales</span>
-                  </Link>
-                </label>
-                <input
-                  className={styles.inputCheckbox}
-                  type="checkbox"
-                  id="acceptedTerms"
-                  {...register("acceptedTerms")}
-                />
-              </div>
-              {errors?.acceptedTerms && (
-                <p className={`${styles.feedback}`}>
-                  Vous devez accepter les conditions générales
-                </p>
-              )}
-            </div>
-            {feedBackGood && (
-              <p className={`${styles.feedbackGood}`}>{feedBackGood}</p>
+            {errors?.acceptedTerms && (
+              <p className={`${styles.feedback}`}>
+                Vous devez accepter les conditions générales
+              </p>
             )}
-            {errors?.generic && (
-              <p className={`${styles.feedback}`}>{errors.generic.message}</p>
-            )}
-            <button
-              className={`btn btn-primary mt3pc mb3pc ${styles.button}`}
-              disabled={isSubmitting}
-            >
-              S'inscrire
-            </button>
-          </form>
-        </div>
+          </div>
+          {feedBackGood && (
+            <p className={`${styles.feedbackGood}`}>{feedBackGood}</p>
+          )}
+          {errors?.generic && (
+            <p className={`${styles.feedback}`}>{errors.generic.message}</p>
+          )}
+          {/* {changeFeedback && (
+              <p className={`${styles.feedback} mb20`}>
+                {changeFeedback}
+              </p>
+            )} */}
+          <button
+            className={`btn btn-primary mt3pc mb3pc ${styles.button}`}
+            disabled={isSubmitting}
+          >
+            S'inscrire
+          </button>
+        </form>
       </section>
     </main>
   );

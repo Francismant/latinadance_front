@@ -41,7 +41,7 @@
   }
   
   @mixin xl {
-    @media (min-width: 1000px) {
+    @media (max-width: 1000px) {
       @content;
     }
   }
