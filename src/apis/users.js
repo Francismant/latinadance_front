@@ -1,4 +1,5 @@
-const API_USERS = "/api/users";
+// const API_USERS = "http://localhost:8000/api/users";
+const API_USERS = "https://latinadanceback-production.up.railway.app/api/users";
 
 
 export async function createUser(newUser) {
