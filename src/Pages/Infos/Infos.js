@@ -16,7 +16,6 @@ import CarteTarifSolo from "../../assets/components/Cards/CarteTarifSolo";
 // import { AuthContext } from "../../context";
 // import { getInfosCours } from "../../apis/infos";
 import { NavLink } from "react-router-dom";
-import MapComponent from "../../assets/components/MapComponent";
 
 function Infos() {
   // const [infos, setInfos] = useState([]);
@@ -62,9 +61,8 @@ function Infos() {
             Miroirs. La salle est facile d’accès et un parking est à votre
             disposition.{" "}
           </p>
-          <div className="df fc gap2">
+          <div className="df fc jcc aic gap2">
             <Salles />
-            <MapComponent />
           </div>
         </section>
         <section className="mb3pc">
