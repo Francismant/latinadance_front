@@ -61,7 +61,7 @@ function Infos() {
             Miroirs. La salle est facile d’accès et un parking est à votre
             disposition.{" "}
           </p>
-          <div className="df fc jcc aic gap2">
+          <div className="df fc gap2">
             <Salles />
           </div>
         </section>
